@@ -1,0 +1,21 @@
+.coinsMarketsData {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #dddddd;
+}
+.coinsMarketsNameAndSymbol {
+  display: flex;
+  p {
+    margin-left: 5px;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+}
+// .coinsMarketsPrices {
+//   display: flex;
+//   justify-content: space-between;
+// }

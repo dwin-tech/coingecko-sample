@@ -1,11 +1,15 @@
 import "./App.css";
 import React from "react";
-import Footer from "./components/footer";
+import HeaderContainer from "./container/headerContainer";
+import PriceByMarketCap from "./components/pricesByMarketCap";
+import CoinsMarketsContainer from "./container/coins-markets";
 
 function App() {
   return (
     <div>
-      <Footer />
+      <HeaderContainer />
+      <PriceByMarketCap />
+      <CoinsMarketsContainer />
     </div>
   );
 }
