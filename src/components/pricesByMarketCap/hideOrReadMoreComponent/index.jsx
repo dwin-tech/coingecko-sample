@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import style from "./style.module.scss";
 
 function HideOrReadMoreComponent({ text }) {
   const [showLess, setShowLess] = useState(true);

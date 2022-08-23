@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 
 const IOSSwitch = styled((props) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
 ))(({ theme }) => ({
   width: 42,
