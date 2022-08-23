@@ -13,7 +13,7 @@ function PriceByMarketCap() {
     return state.coins;
   });
 
-  const text = `The global cryptocurrency market cap today is $1.19 Trillion, a ${pricesByMarkCap.market_cap_change_percentage_24h_usd}change in the last 24 hours. Total cryptocurrency trading volume in the  last day is at $84.4 Billion. Bitcoin dominance is at 38.3% and Ethereum dominance is at 19%. CoinGecko is now tracking 12,954 cryptocurrencies. Popular trends of the industry right now are DeFi and Play to Earn.`;
+  const text = `The global cryptocurrency market cap today is $1.19 Trillion, a ${pricesByMarkCap.marketCapChangePercentage24hUsd}change in the last 24 hours. Total cryptocurrency trading volume in the  last day is at $84.4 Billion. Bitcoin dominance is at 38.3% and Ethereum dominance is at 19%. CoinGecko is now tracking 12,954 cryptocurrencies. Popular trends of the industry right now are DeFi and Play to Earn.`;
 
   return (
     <div className={style.priceByMarketCap}>
@@ -33,19 +33,19 @@ function PriceByMarketCap() {
           />
           <div className={style.globalData}>
             <div>
-              <p>${pricesByMarkCap.total_market_cap}</p>
+              <p>${pricesByMarkCap.totalMarketCap}</p>
               <p>Market Capitalization</p>
             </div>
             <div>
-              <p>${pricesByMarkCap.total_volume}</p>
+              <p>${pricesByMarkCap.totalVolume}</p>
               <p>24h Trading Volume</p>
             </div>
             <div>
-              <p>{pricesByMarkCap.market_cap_percentage}%</p>
+              <p>{pricesByMarkCap.marketCapPercentage}%</p>
               <p>Bitcoin Market Cap Dominance</p>
             </div>
             <div>
-              <p>{pricesByMarkCap.active_cryptocurrencies}</p>
+              <p>{pricesByMarkCap.activeCryptocurrencies}</p>
               <p># of Coins</p>
             </div>
           </div>

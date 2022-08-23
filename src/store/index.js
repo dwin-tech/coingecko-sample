@@ -1,11 +1,11 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import coinsReducer from "../reducers/coinsCount";
-import coinsMarketsReducer from "../reducers/coins-markets"
+import coinsMarketsReducer from "../reducers/coins-markets/index";
 
 const reducers = combineReducers({
   coins: coinsReducer,
-  coins_markets: coinsMarketsReducer,
+  coinsMarkets: coinsMarketsReducer,
 });
 
 const store = createStore(reducers, applyMiddleware(thunkMiddleware));

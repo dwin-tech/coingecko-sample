@@ -1,32 +1,32 @@
 /* eslint-disable no-unused-vars */
 
 export const initalCoinsCountState = {
-  active_cryptocurrencies: 0,
+  activeCryptocurrencies: 0,
   markets: 0,
-  total_market_cap: 0,
-  market_cap_change_percentage_24h_usd: 0,
-  market_cap_percentage: 0,
-  market_cap_percentage_eth: 0,
-  total_volume: 0,
+  totalMarketCap: 0,
+  marketCapChangePercentage24hUsd: 0,
+  marketCapPercentage: 0,
+  marketCapPercentageEth: 0,
+  totalVolume: 0,
   gas: "7 GWEI",
 };
 
 // eslint-disable-next-line default-param-last
 const coinsReducer = (state = initalCoinsCountState, action) => {
-  if (action?.type === "COINS-COUNT") {
+  if (action.type === "COINS-COUNT") {
     return {
       ...state,
-      active_cryptocurrencies: action.globalData.data.active_cryptocurrencies,
+      activeCryptocurrencies: action.globalData.data.active_cryptocurrencies,
       markets: action.globalData.data.markets,
-      total_market_cap: action.globalData.data.total_market_cap.usd,
-      market_cap_change_percentage_24h_usd:
+      totalMarketCap: action.globalData.data.total_market_cap.usd,
+      marketCapChangePercentage24hUsd:
         Math.ceil(
           action.globalData.data.market_cap_change_percentage_24h_usd * 10
         ) / 10,
-      market_cap_percentage:
-        Math.ceil(action.globalData.data.market_cap_percentage.btc * 10) / 10,
-      total_volume: action.globalData.data.total_volume.usd,
-      market_cap_percentage_eth:
+      marketCapPercentage:
+        Math.ceil(action.globalData.data.total_market_cap.btc * 10) / 10,
+      totalVolume: action.globalData.data.total_volume.usd,
+      marketCapPercentageEth:
         action.globalData.data.market_cap_percentage.eth.toFixed(1),
     };
   }

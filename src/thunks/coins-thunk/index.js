@@ -5,6 +5,7 @@ const coinsThunk = (dispatch) => {
     .get("https://api.coingecko.com/api/v3/global")
     .then((response) => {
       const globalData = response.data;
+      console.log(globalData, "globalData");
       dispatch({ type: "COINS-COUNT", globalData });
     });
 };

@@ -23,22 +23,22 @@ function Header({ coins }) {
         <ul>
           <li>
             Coins:
-            <span>{coins.active_cryptocurrencies}</span>{" "}
+            <span>{coins.activeCryptocurrencies}</span>{" "}
           </li>
           <li>
             Exchanges:
             <span>{coins.markets}</span>
           </li>
           <li>
-            Market Cap: <span>{coins.total_market_cap}</span>
-            <span>{coins.market_cap_change_percentage_24h_usd}</span>
+            Market Cap: <span>{coins.totalMarketCap}</span>
+            <span>{coins.marketCapChangePercentage24hUsd}</span>
           </li>
           <li>
-            24h Vol: <span>${coins.total_volume}</span>
+            24h Vol: <span>${coins.totalVolume}</span>
           </li>
           <li>
-            Dominance: <span>{coins.market_cap_percentage}% ETH</span>
-            <span>{coins.market_cap_percentage_eth}%</span>
+            Dominance: <span>{coins.marketCapPercentage}% ETH</span>
+            <span>{coins.marketCapPercentageEth}%</span>
           </li>
           <li>
             Gas:

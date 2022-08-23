@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import coinsMarketsThunk from "../../thunks/coins-markets";
 import { useSelector, useDispatch } from "react-redux";
-import Pegination from "./pagination";
-import style from "./style.module.scss";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import coinsMarketsThunk from "../../thunks/coins-markets";
+import style from "./style.module.scss";
+import PaginationRounded from "./pagination/index";
 
-function CoinsMarketsComponent(props) {
+function CoinsMarketsComponent() {
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const drawCoinsMarketsData = useSelector(
-    ({ coins_markets }) => coins_markets.current_price
+    (state) => state.coinsMarkets.currentPrice
   );
-
+  const currentPage = useSelector((state) => state.coinsMarkets.currentPage);
   useEffect(() => {
-    coinsMarketsThunk(dispatch);
+    coinsMarketsThunk(dispatch, currentPage);
   }, []);
 
   useEffect(() => {
@@ -23,21 +22,21 @@ function CoinsMarketsComponent(props) {
         return (
           <div className={style.coinsMarketsData}>
             <div className={style.coinsMarketsNameAndSymbol}>
-              <p>{e.market_cap_rank}</p>
               <StarBorderIcon />
-              <img src={e.image}></img>
-              <p>{e.name}</p>
-              <p>{e.symbol}</p>
+              <div>{e.market_cap_rank}</div>
+              <img src={e.image} alt="coinsImage" />
+              <div>{e.name}</div>
+              <div>{e.symbol}</div>
             </div>
-            <p>${e.current_price}</p>
-            <p>{e.price_change_percentage_24h}%</p>
-            <p>${e.total_volume}</p>
-            <p>${e.market_cap}</p>
-            <p>
+            <div>${e.current_price}</div>
+            <div>{e.price_change_percentage_24h}%</div>
+            <div>${e.total_volume}</div>
+            <div>${e.market_cap}</div>
+            <div>
               {e.fully_diluted_valuation
                 ? `$${e.fully_diluted_valuation}`
                 : "?"}
-            </p>
+            </div>
           </div>
         );
       });
@@ -48,7 +47,7 @@ function CoinsMarketsComponent(props) {
   return (
     <div>
       {data}
-      <Pegination currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <PaginationRounded />
     </div>
   );
 }

@@ -4,5 +4,10 @@ const coinsMarketsAction = (getCoinsMarketsData) => {
     payload: getCoinsMarketsData,
   };
 };
+export const currnetPageAction = () => {
+  return {
+    type: "SET-CURRENT-PAGE",
+  };
+};
 
 export default coinsMarketsAction;
