@@ -9,9 +9,7 @@ function PriceByMarketCap() {
   const toggler = () => {
     setToggleSwitch(!toggleSWitch);
   };
-  const pricesByMarkCap = useSelector(function (state) {
-    return state.coins;
-  });
+  const pricesByMarkCap = useSelector((state) => state.coins);
 
   const text = `The global cryptocurrency market cap today is $1.19 Trillion, a ${pricesByMarkCap.marketCapChangePercentage24hUsd}change in the last 24 hours. Total cryptocurrency trading volume in the  last day is at $84.4 Billion. Bitcoin dominance is at 38.3% and Ethereum dominance is at 19%. CoinGecko is now tracking 12,954 cryptocurrencies. Popular trends of the industry right now are DeFi and Play to Earn.`;
 

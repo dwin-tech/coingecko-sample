@@ -7,7 +7,6 @@ import { currnetPageAction } from "../../../actions/coins-markets";
 
 function PaginationRounded() {
   const currentPage = useSelector((state) => state.coinsMarkets);
-  console.log(currentPage, "currentPagePagination");
   const coinsCount = useSelector((state) => state.coins);
   return (
     <Stack spacing={2}>
