@@ -23,19 +23,25 @@ function CoinsMarketsComponent() {
           <div className={style.coinsMarketsData}>
             <div className={style.coinsMarketsNameAndSymbol}>
               <StarBorderIcon />
-              <div>{e.market_cap_rank}</div>
+              <span>{e.market_cap_rank}</span>
               <img src={e.image} alt="coinsImage" />
-              <div>{e.name}</div>
-              <div>{e.symbol}</div>
+              <h1>{e.name}</h1>
+              <p>{e.symbol}</p>
             </div>
-            <div>${e.current_price}</div>
-            <div>{e.price_change_percentage_24h}%</div>
-            <div>${e.total_volume}</div>
-            <div>${e.market_cap}</div>
-            <div>
-              {e.fully_diluted_valuation
-                ? `$${e.fully_diluted_valuation}`
-                : "?"}
+            <div className={style.coinData}>
+              <p>${e.current_price}</p>
+              {e.price_change_percentage_24h < 0 ? (
+                <p className={style.red}>{e.price_change_percentage_24h}%</p>
+              ) : (
+                <p className={style.green}>{e.price_change_percentage_24h}%</p>
+              )}
+              <p>${e.total_volume}</p>
+              <p>${e.market_cap}</p>
+              <p>
+                {e.fully_diluted_valuation
+                  ? `$${e.fully_diluted_valuation}`
+                  : "?"}
+              </p>
             </div>
           </div>
         );

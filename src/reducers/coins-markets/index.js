@@ -10,12 +10,6 @@ const coinsMarketsReducer = (state = initialCoinsMarketsState, action) => {
       currentPrice: action.payload,
     };
   }
-  if (action.type === "SET-CURRENT-PAGE") {
-    return {
-      ...state,
-      currentPage: action.currentPage,
-    };
-  }
   return state;
 };
 

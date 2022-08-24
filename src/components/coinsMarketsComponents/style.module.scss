@@ -1,21 +1,64 @@
 .coinsMarketsData {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-items: start;
+  align-items: center;
+  height: 80px;
+  width: 100%;
   border-bottom: solid 1px #dddddd;
-}
-.coinsMarketsNameAndSymbol {
-  display: flex;
-  p {
-    margin-left: 5px;
-  }
+
+  // & :nth-child(1n+1) {
+  //   display: flex;
+  //   align-items: center;
+  // }
+
+  // & :last-child {
+  //   width: 100%;
+  // }
+
+  // & :last-child :nth-child(1n+1) {
+  //   display: inline;
+  //   justify-content: space-between;
+  // }
+
   img {
     width: 30px;
     height: 30px;
-    margin-top: 10px;
-    margin-right: 5px;
+  }
+
+  // & :nth-child(1n+1):not(:first-child):not(img) {
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   width: 10px;
+  // }
+}
+.coinsMarketsNameAndSymbol {
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+  min-width: 300px;
+  h1 {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  p {
+    text-transform: uppercase;
+    font-size: 10px;
   }
 }
-// .coinsMarketsPrices {
-//   display: flex;
-//   justify-content: space-between;
-// }
+.coinData {
+  display: flex;
+  text-align: start;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  p {
+    width: 110px;
+  }
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
