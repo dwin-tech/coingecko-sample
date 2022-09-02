@@ -1,0 +1,79 @@
+@import "../../styles/style.scss";
+
+.allSortedButton {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  border-bottom: solid 1px #dddddd;
+  button {
+    color: $darkGreyColor;
+  }
+  button {
+    width: auto;
+    background: white;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+}
+.coinButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: start;
+  align-items: center;
+  width: 450px;
+  & :first-child {
+    margin-right: 25px;
+  }
+}
+.coinsDataButtons {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.buttonsHover {
+  cursor: pointer;
+  display: flex;
+  .downIcon {
+    display: none;
+  }
+}
+.buttonsHover:not(.buttonsHover:nth-child(2), :first-child) {
+  margin-top: 18px;
+  margin-left: 15px;
+}
+.buttonsHover:hover {
+  .downIcon {
+    display: inline;
+  }
+}
+.priceButton {
+  cursor: pointer;
+  display: flex;
+
+  .downIcon {
+    display: none;
+    margin-top: 18px;
+    margin-left: 15px;
+  }
+}
+.priceButton:hover {
+  .downIcon {
+    display: inline;
+  }
+}
+.valueAndMrkCap{
+  cursor: pointer;
+  display: flex;
+  .downIcon {
+    display: none;
+    margin-top: 18px;
+    margin-left: 15px;
+  }
+}
+.valueAndMrkCap:hover {
+  .downIcon {
+    display: inline;
+  }
+}

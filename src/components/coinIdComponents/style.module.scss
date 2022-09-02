@@ -1,0 +1,75 @@
+@import "../../styles/style.scss";
+
+.rank {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 7px;
+}
+.imgNameAndSymbol {
+  display: flex;
+  margin-top: 10px;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  span {
+    color: $darkGreyColor;
+    font-size: 26px;
+    font-weight: bold;
+  }
+}
+.coinName {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.coinSymbol {
+  text-transform: uppercase;
+}
+.red {
+  color: $redColor;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.green {
+  color: $greenColor;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.coinPrice {
+  display: flex;
+  .currentPrice {
+    font-size: 35px;
+    color: $darkGreyColor;
+    font-weight: bold;
+  }
+}
+.coinTableDatas {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  div {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #dddddd;
+    width: 400px;
+    padding: 10px;
+    margin-left: 10px;
+    & :last-child {
+      color: black;
+    }
+  }
+}
+.allTableData {
+  display: flex;
+}
+.threeButtons button{
+  background-color: #ffffff;
+  width: 50px;
+  border: 1px solid $greyColor;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 5px;
+  margin-top: 15px;
+}

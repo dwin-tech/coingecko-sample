@@ -1,0 +1,79 @@
+@import "../../styles/style.scss";
+
+.footerComponents {
+  display: flex;
+  justify-content: space-between;
+  background-color: #181818;
+  color: $greyColor;
+  padding: 50px 30px;
+
+  img {
+    width: 300px;
+  }
+
+  p {
+    width: 300px;
+    height: auto;
+  }
+
+  span {
+    margin-left: 20%;
+  }
+
+  .footerAllLists {
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: $greyColor;
+    margin-top: 50px;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .footerLIsts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    flex-wrap: wrap;
+  }
+
+  .footerTexts ul {
+    cursor: pointer;
+    padding: 0px;
+  }
+  .helpCenterAndTermsOfServiceDivs {
+    display: -webkit-inline-box;
+  }
+  .helpCenterAndTermsOfServiceItems {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+  }
+  input {
+    width: 280px;
+    height: 30px;
+    border-radius: 5px;
+  }
+}
+.subscribeButton {
+  background-color: #8dc647;
+  color: #ffffff;
+  width: 100px;
+  height: 38px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 15px;
+  border: 1px solid #8dc647;
+}
+.subscribeButton:hover {
+  background-color: #729b3f;
+}
+.containerOfFooterAllLists {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+.inputContainer{
+  margin-top: 3%;
+}
