@@ -24,7 +24,7 @@ const coinsReducer = (state = initalCoinsCountState, action) => {
           action.globalData.data.market_cap_change_percentage_24h_usd * 10
         ) / 10,
       marketCapPercentage:
-        Math.ceil(action.globalData.data.total_market_cap.btc * 10) / 10,
+        action.globalData.data.market_cap_percentage.btc.toFixed(1),
       totalVolume: action.globalData.data.total_volume.usd,
       marketCapPercentageEth:
         action.globalData.data.market_cap_percentage.eth.toFixed(1),

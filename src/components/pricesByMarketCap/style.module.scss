@@ -12,7 +12,7 @@
     border-radius: 15px;
     border: 1px solid #dddddd;
     --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    // border-left: 9px solid #f04744;
+
     p {
       margin-left: 10%;
     }
@@ -46,4 +46,16 @@
 }
 .priceByMarketCap {
   border-bottom: solid 1px #dddddd;
+}
+
+.showFDV {
+  display: flex;
+  justify-content: end;
+  p {
+    margin: 0px;
+    margin-left: 5px;
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.425;
+  }
 }

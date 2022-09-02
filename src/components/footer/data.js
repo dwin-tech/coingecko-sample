@@ -1,0 +1,43 @@
+const data = {
+  exploreArray: [
+    "Explore",
+    "Bitcoin Price",
+    "Ethereum Price",
+    "DeFi Coins",
+    "Metaverse Coins",
+    "Gaming Coins",
+    "Meme Coins",
+  ],
+  resourcesArray: [
+    "Resources",
+    "Perpetuals",
+    "Crypto News",
+    "Bitcoin Treasury",
+    "Donations",
+    "Bitcoin",
+    "Ethereum",
+  ],
+  aboutCoinGeckoArray: [
+    "About CoinGecko",
+    "About Us",
+    "Careers",
+    "Company Blog",
+    "Branding Guide",
+    "Request Form",
+    "Advertising",
+    "FAQ",
+  ],
+  communityArray: [
+    "Community",
+    "Twitter",
+    "Telegram Chat",
+    "Telegram News",
+    "Instagram",
+    "Reddi",
+    "Discord",
+    "Facebook",
+    "Youtube",
+    "TikTok",
+  ],
+};
+export default data;
