@@ -1,0 +1,22 @@
+@import "../../../styles/style.scss";
+
+.switchButton {
+  display: flex;
+}
+.readMoreOrHideText {
+  color: $greyColor;
+}
+
+.red {
+  color: $redColor;
+}
+.green {
+  color: $greenColor;
+}
+.textTotalCrypt {
+  width: 56%;
+  span {
+    color: $greenColor;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,74 @@
+@import "../../styles/style.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  border-bottom: solid 1px #dddddd;
+  margin-bottom: 30px;
+
+  .pricesAndNames {
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+  }
+
+  .headerMembers {
+    display: flex;
+    & :nth-child(2) {
+      color: #007bff;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+  }
+
+  .darkModAndEn {
+    display: flex;
+    justify-content: space-between;
+  }
+  .headerSubscribeButton {
+    color: #8dc647;
+    border: 1px solid #8dc647;
+    width: 82px;
+    height: 33px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+  }
+  .headerSubscribeButton:hover {
+    background-color: #cdd0d5;
+  }
+}
+
+.darkMode {
+  cursor: pointer;
+}
+.marketCap {
+  margin-top: -2%;
+}
+.green {
+  color: $greenColor;
+}
+.red {
+  color: $redColor;
+}
+.priceAndIcon {
+  display: flex;
+  margin-top: 9px;
+  p {
+    margin: 0px;
+  }
+  .iconGreen {
+    margin-top: -4px;
+    height: 19px;
+    margin-right: 7px;
+    color: $greenColor;
+  }
+  .iconRed {
+    margin-top: -4px;
+    height: 19px;
+    margin-right: 7px;
+    color: $redColor;
+  }
+}

@@ -1,0 +1,61 @@
+@import "../../styles/style.scss";
+.globalData {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  div {
+    width: 280px;
+    height: 90px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #dddddd;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    p {
+      margin-left: 10%;
+    }
+    & p:first-child {
+      color: #11182e;
+      font-size: 18px;
+    }
+  }
+  & div:first-child {
+    border-left: 9px solid #f04744;
+  }
+  & div:nth-child(2) {
+    border-left: 9px solid #8dc647;
+  }
+  & div:nth-child(3) {
+    border-left: 9px solid #d1d5db;
+  }
+  & div:nth-child(4) {
+    border-left: 9px solid #d1d5db;
+  }
+}
+.switchButtonAndText {
+  color: $darkGreyColor;
+}
+.switchButtonAndText h2 {
+  display: inline;
+}
+.switchButtonAndText h4 {
+  display: inline;
+  margin-left: 10px;
+}
+.priceByMarketCap {
+  border-bottom: solid 1px #dddddd;
+}
+
+.showFDV {
+  display: flex;
+  justify-content: end;
+  p {
+    margin: 0px;
+    margin-left: 5px;
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.425;
+  }
+}
