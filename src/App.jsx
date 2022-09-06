@@ -5,7 +5,7 @@ import HeaderContainer from "./container/headerContainer";
 import Footer from "./components/footer";
 import ComingSoon from "./components/comingSoon";
 import TreeComponents from "./components/threeComponents";
-import CoinIdComponent from "./components/coinIdComponents";
+import SecondPage from "./components/secondPage/index";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <HeaderContainer />
       <Routes>
         <Route path="/" element={<TreeComponents />} />
-        <Route path="/coins/:id" element={<CoinIdComponent />} />
+        <Route path="/coins/:id" element={<SecondPage />} />
         <Route path="/comingSoon" element={<ComingSoon />} />
       </Routes>
       <Footer />

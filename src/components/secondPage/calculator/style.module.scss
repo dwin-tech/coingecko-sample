@@ -1,0 +1,82 @@
+.calculatorContainer {
+  background-color: #f3f4f6;
+  width: 400px;
+  padding: 15px;
+  height: auto;
+  border-radius: 15px;
+  color: #111827;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.symbolContainer {
+  background-color: #ffffff;
+  width: 50px;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.symbolAndCount {
+  display: flex;
+  margin-top: 10px;
+  height: 64px;
+  input {
+    border: none;
+  }
+}
+
+.coinSymbol {
+  text-transform: uppercase;
+}
+.icons button {
+  padding: 0px;
+  margin-bottom: 3px;
+  width: 21px;
+  height: 21px;
+}
+.icons {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 33px;
+  margin-top: 3%;
+  text-align: right;
+  display: none;
+  .arrowDropUpIcon {
+    padding: 0px;
+    width: inherit;
+  }
+  .arrowDropDownIcon {
+    padding: 0px;
+    margin: 0px;
+    width: inherit;
+  }
+}
+.icons :hover {
+  cursor: pointer;
+}
+
+.inputAndIcons {
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-between;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 300px;
+  margin-left: 3px;
+}
+.symbolAndCount :hover{
+  cursor: pointer;
+  .icons{
+    display: initial;
+    margin-right: 5%;
+  }
+}
+.priceAndSymbol {
+  font-size: 17px;
+  font-weight: normal;
+}

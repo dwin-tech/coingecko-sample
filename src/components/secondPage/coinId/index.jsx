@@ -6,7 +6,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ReplyRoundedIcon from "@mui/icons-material/ReplyRounded";
-import getCoinId from "../../thunks/coin-id";
+import getCoinId from "../../../thunks/coin-id";
 import style from "./style.module.scss";
 
 function CoinIdComponent() {
