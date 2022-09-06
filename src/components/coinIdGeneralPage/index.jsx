@@ -2,7 +2,7 @@ import React from "react";
 import CoinIdComponent from "./coinId";
 import CalculatorComponent from "./calculator";
 
-function SecondPage() {
+function CoinIdGeneralPage() {
   return (
     <div>
       <div>
@@ -15,4 +15,4 @@ function SecondPage() {
   );
 }
 
-export default SecondPage;
+export default CoinIdGeneralPage;

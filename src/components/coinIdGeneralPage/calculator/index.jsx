@@ -9,27 +9,27 @@ function CalculatorComponent() {
   const symbol = coinSymbol.map((e) => (
     <span className={style.coinSymbol}>{e.symbol}</span>
   ));
-  // eslint no-return-assign: "error"
+  const coinCurrentPrice = coinSymbol.map((e) => (
+    <span>{e.current_price}</span>
+  ));
   const [count, setCount] = useState(0);
   const [multiplyingOrDivideCount, setMultiplyingCount] = useState(0);
   function sumAndMultiplyCount(type) {
-    if (type === "increase") {
-      setCount(count + 1);
-      setMultiplyingCount(167.691 * (count + 1));
-    } else {
-      setCount(count - 1);
-      setMultiplyingCount(167.691 * (count - 1));
-    }
+    setCount(type ? count + 1 : count - 1);
+    setMultiplyingCount(
+      coinSymbol[0].current_price * (type ? count + 1 : count - 1)
+    );
   }
 
   function sumAndDivide(type) {
-    if (type === "divide") {
-      setMultiplyingCount(multiplyingOrDivideCount + 1);
-      setCount((multiplyingOrDivideCount + 1) / 167.691);
-    } else {
-      setMultiplyingCount(multiplyingOrDivideCount - 1);
-      setCount((multiplyingOrDivideCount - 1) / 167.691);
-    }
+    setMultiplyingCount(
+      type ? multiplyingOrDivideCount + 1 : multiplyingOrDivideCount - 1
+    );
+    setCount(
+      type
+        ? (multiplyingOrDivideCount + 1) / coinSymbol[0].current_price
+        : (multiplyingOrDivideCount - 1) / coinSymbol[0].current_price
+    );
   }
 
   return (
@@ -56,7 +56,7 @@ function CalculatorComponent() {
       </div>
       <div>
         <div className={style.symbolAndCount}>
-          <div className={style.symbolContainer}>BCH</div>
+          <div className={style.symbolContainer}>USD</div>
           <div className={style.inputAndIcons}>
             <input type="text" value={multiplyingOrDivideCount} />
             <div className={style.icons}>
@@ -75,7 +75,9 @@ function CalculatorComponent() {
             </div>
           </div>
         </div>
-        <p className={style.priceAndSymbol}>1 {symbol} = 167.691 BCH</p>
+        <p className={style.priceAndSymbol}>
+          1 {symbol} = {coinCurrentPrice}USD
+        </p>
       </div>
     </div>
   );
