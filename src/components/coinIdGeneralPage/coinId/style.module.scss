@@ -1,3 +1,4 @@
+@import "../../../styles/style.scss";
 
 .rank {
   background-color: #1f2937;
@@ -13,7 +14,7 @@
     height: 30px;
   }
   span {
-    color: rgba(107, 114, 128);
+    color: $greyColor;
     font-size: 26px;
     font-weight: bold;
   }
@@ -26,13 +27,13 @@
   text-transform: uppercase;
 }
 .red {
-  color: red;
+  color: $redColor;
   font-size: 25px;
   font-weight: bold;
   margin-top: 8px;
 }
 .green {
-  color: green;
+  color: $greenColor;
   font-size: 25px;
   font-weight: bold;
   margin-top: 8px;

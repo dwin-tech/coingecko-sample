@@ -25,7 +25,7 @@ function Header() {
   ];
   const array = coinsArray.map((e) => {
     return (
-      <div>
+      <div key={e.id}>
         <div className={style.headerMembers}>
           <p>{e.name}</p>
           {e.isGreen ? (

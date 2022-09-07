@@ -8,6 +8,7 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ReplyRoundedIcon from "@mui/icons-material/ReplyRounded";
 import getCoinId from "../../../thunks/coin-id";
 import style from "./style.module.scss";
+import HighAndLowPrices from "../highAndLowPrices";
 
 function CoinIdComponent() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function CoinIdComponent() {
 
   const array = coinData.map((e) => {
     return (
-      <div>
+      <div key={e.id}>
         <div>
           <span className={style.rank}>Rank #{e.market_cap_rank}</span>
         </div>
@@ -64,6 +65,9 @@ function CoinIdComponent() {
             </button>
           </div>
           <div />
+        </div>
+        <div>
+          <HighAndLowPrices />
         </div>
         <div className={style.allTableData}>
           <div className={style.coinTableDatas}>

@@ -8,7 +8,7 @@ function Footer() {
   function footerLists(array) {
     return array.map((e) => {
       return (
-        <div className={style.containerOfFooterAllLists}>
+        <div className={style.containerOfFooterAllLists} key={e.id}>
           <NavLink to="/comingSoon" key={e.id} className={style.footerAllLists}>
             {e}
           </NavLink>
@@ -28,15 +28,7 @@ function Footer() {
             CoinGecko tracks community growth, open-source code development,
             major events and on-chain metrics.
           </p>
-          <div className={style.helpCenterAndTermsOfServiceItems}>
-            {/* <div className={style.helpCenterAndTermsOfServiceDivs}>
-              {footerLists(helpCenterArray)}
-            </div>
-            <div className={style.helpCenterAndTermsOfServiceDivs}>
-              {footerLists(termsOfServiceArray)}
-            </div> */}
-          </div>
-
+          <div className={style.helpCenterAndTermsOfServiceItems} />
           <p>© 2022 CoinGecko. All Rights Reserved.</p>
         </div>
       </div>
