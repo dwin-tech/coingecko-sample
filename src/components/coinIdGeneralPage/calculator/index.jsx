@@ -22,14 +22,11 @@ function CalculatorComponent() {
   }
 
   function sumAndDivide(type) {
-    setMultiplyingCount(
-      type ? multiplyingOrDivideCount + 1 : multiplyingOrDivideCount - 1
-    );
-    setCount(
-      type
-        ? (multiplyingOrDivideCount + 1) / coinSymbol[0].current_price
-        : (multiplyingOrDivideCount - 1) / coinSymbol[0].current_price
-    );
+    const sumAndDivideCount = type
+      ? multiplyingOrDivideCount + 1
+      : multiplyingOrDivideCount - 1;
+    setMultiplyingCount(sumAndDivideCount);
+    setCount(sumAndDivideCount / coinSymbol[0].current_price);
   }
 
   return (

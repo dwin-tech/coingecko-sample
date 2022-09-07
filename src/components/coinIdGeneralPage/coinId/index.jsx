@@ -66,9 +66,7 @@ function CoinIdComponent() {
           </div>
           <div />
         </div>
-        <div>
-          <HighAndLowPrices />
-        </div>
+        <HighAndLowPrices />
         <div className={style.allTableData}>
           <div className={style.coinTableDatas}>
             {e.market_cap ? (
