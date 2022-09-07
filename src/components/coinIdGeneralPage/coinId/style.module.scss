@@ -1,4 +1,4 @@
-@import "../../styles/style.scss";
+@import "../../../styles/style.scss";
 
 .rank {
   background-color: #1f2937;
@@ -14,7 +14,7 @@
     height: 30px;
   }
   span {
-    color: $darkGreyColor;
+    color: $greyColor;
     font-size: 26px;
     font-weight: bold;
   }
@@ -42,7 +42,7 @@
   display: flex;
   .currentPrice {
     font-size: 35px;
-    color: $darkGreyColor;
+    color: rgba(107, 114, 128);
     font-weight: bold;
   }
 }
@@ -67,7 +67,7 @@
 .threeButtons button{
   background-color: #ffffff;
   width: 50px;
-  border: 1px solid $greyColor;
+  border: 1px solid rgba(107, 114, 128);
   cursor: pointer;
   margin-left: 5px;
   border-radius: 5px;
