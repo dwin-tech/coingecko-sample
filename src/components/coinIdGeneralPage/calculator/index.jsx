@@ -1,24 +1,40 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import { useParams } from "react-router-dom";
 import style from "./style.module.scss";
+import { coinCurrentPriceThunk } from "../../../thunks/coin-id";
+import SelectAutoWidth from "./selectExchanges";
 
 function CalculatorComponent() {
-  const coinSymbol = useSelector((state) => state.coinId.coindata);
-  const symbol = coinSymbol.map((e) => (
-    <span className={style.coinSymbol}>{e.symbol}</span>
-  ));
-  const coinCurrentPrice = coinSymbol.map((e) => (
-    <span>{e.current_price}</span>
-  ));
+  const [cours, setCours] = useState("usd");
+  const [coursObject, setCoursObject] = useState({});
+
   const [count, setCount] = useState(0);
+
   const [multiplyingOrDivideCount, setMultiplyingCount] = useState(0);
+  const currentPrice = useSelector((state) => state.coinId.currentPrice);
+
+  useEffect(() => {
+    setCoursObject({ usd: 0.1145452 });
+  }, []);
+
+  useEffect(() => {
+    setCoursObject(currentPrice?.market_data?.current_price);
+  }, [currentPrice]);
+
+  // eslint-disable-next-line no-unused-vars
+
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  useEffect(() => {
+    coinCurrentPriceThunk(dispatch, id);
+  }, []);
+
   function sumAndMultiplyCount(type) {
     setCount(type ? count + 1 : count - 1);
-    setMultiplyingCount(
-      coinSymbol[0].current_price * (type ? count + 1 : count - 1)
-    );
+    setMultiplyingCount(coursObject[cours] * (type ? count + 1 : count - 1));
   }
 
   function sumAndDivide(type) {
@@ -26,15 +42,17 @@ function CalculatorComponent() {
       ? multiplyingOrDivideCount + 1
       : multiplyingOrDivideCount - 1;
     setMultiplyingCount(sumAndDivideCount);
-    setCount(sumAndDivideCount / coinSymbol[0].current_price);
+    setCount(sumAndDivideCount / coursObject[cours]);
   }
+
+  // eslint-disable-next-line no-unused-vars
 
   return (
     <div className={style.calculatorContainer}>
       <div>
-        <p>Convert {symbol} to BCH</p>
+        <p className={style.coinSymbol}>Convert {currentPrice.symbol} to BCH</p>
         <div className={style.symbolAndCount}>
-          <div className={style.symbolContainer}>{symbol}</div>
+          <div className={style.symbolContainer}>{currentPrice.symbol}</div>
           <div className={style.inputAndIcons}>
             <input type="text" value={count} />
             <div className={style.icons}>
@@ -53,7 +71,12 @@ function CalculatorComponent() {
       </div>
       <div>
         <div className={style.symbolAndCount}>
-          <div className={style.symbolContainer}>USD</div>
+          <SelectAutoWidth
+            className={style.selectCours}
+            cours={cours}
+            setCours={setCours}
+            obj={coursObject}
+          />
           <div className={style.inputAndIcons}>
             <input type="text" value={multiplyingOrDivideCount} />
             <div className={style.icons}>
@@ -73,7 +96,9 @@ function CalculatorComponent() {
           </div>
         </div>
         <p className={style.priceAndSymbol}>
-          1 {symbol} = {coinCurrentPrice}USD
+          1 <span className={style.coinSymbol}>{currentPrice.symbol}</span> =
+          {!!coursObject && coursObject[cours]}{" "}
+          <span className={style.coinSymbol}>{cours}</span>
         </p>
       </div>
     </div>

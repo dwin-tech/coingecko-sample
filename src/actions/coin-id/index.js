@@ -5,4 +5,11 @@ const coinId = (coindata) => {
   };
 };
 
+export const coinCurrentPriceAction = (currentPrice) => {
+  return {
+    type: "COIN-CURRENT-PRICE",
+    payload: currentPrice,
+  };
+};
+
 export default coinId;
