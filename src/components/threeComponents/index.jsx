@@ -1,6 +1,6 @@
 import React from "react";
 import SortedByComponenet from "../sortedBy";
-import CoinsMarketsContainer from "../../container/coins-markets";
+import CoinsMarketsComponent from "../coinsMarketsComponents";
 import PriceByMarketCap from "../pricesByMarketCap";
 
 function TreeComponents() {
@@ -8,7 +8,7 @@ function TreeComponents() {
     <div>
       <PriceByMarketCap />
       <SortedByComponenet />
-      <CoinsMarketsContainer />
+      <CoinsMarketsComponent />
     </div>
   );
 }

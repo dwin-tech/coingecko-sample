@@ -10,6 +10,33 @@ function PriceByMarketCap() {
     setToggleSwitch(!toggleSWitch);
   };
   const pricesByMarkCap = useSelector((state) => state.coins);
+
+  const arrayOfPricesByMarkCap = [
+    {
+      price: pricesByMarkCap.totalMarketCap,
+      text: "Market Capitalization",
+    },
+    {
+      price: pricesByMarkCap.totalVolume,
+      text: "24h Trading Volume",
+    },
+    {
+      price: pricesByMarkCap.marketCapPercentage,
+      text: "Bitcoin Market Cap Dominance",
+    },
+    {
+      price: pricesByMarkCap.activeCryptocurrencies,
+      text: "# of Coins",
+    },
+  ];
+  const array = arrayOfPricesByMarkCap.map((e) => {
+    return (
+      <div>
+        <p>{e.price}</p>
+        <p>{e.text}</p>
+      </div>
+    );
+  });
   return (
     <div className={style.priceByMarketCap}>
       <div className={style.switchButtonAndText}>
@@ -23,24 +50,7 @@ function PriceByMarketCap() {
       {toggleSWitch ? (
         <div>
           <HideOrReadMoreComponent className={style.pricesByMarkCapText} />
-          <div className={style.globalData}>
-            <div>
-              <p>${pricesByMarkCap.totalMarketCap}</p>
-              <p>Market Capitalization</p>
-            </div>
-            <div>
-              <p>${pricesByMarkCap.totalVolume}</p>
-              <p>24h Trading Volume</p>
-            </div>
-            <div>
-              <p>{pricesByMarkCap.marketCapPercentage}%</p>
-              <p>Bitcoin Market Cap Dominance</p>
-            </div>
-            <div>
-              <p>{pricesByMarkCap.activeCryptocurrencies}</p>
-              <p># of Coins</p>
-            </div>
-          </div>
+          <div className={style.globalData}>{array}</div>
         </div>
       ) : (
         <HideOrReadMoreComponent />
