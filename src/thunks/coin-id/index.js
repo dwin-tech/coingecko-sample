@@ -1,5 +1,5 @@
 import axios from "axios";
-import coinId from "../../actions/coin-id";
+import coinId, { coinCurrentPriceAction } from "../../actions/coin-id";
 
 const getCoinId = (dispatch, id) => {
   return axios
@@ -12,4 +12,12 @@ const getCoinId = (dispatch, id) => {
     });
 };
 
+export const coinCurrentPriceThunk = (dispatch, id) => {
+  return axios
+    .get(`https://api.coingecko.com/api/v3/coins/${id}`)
+    .then((response) => {
+      const currentPrice = response.data;
+      dispatch(coinCurrentPriceAction(currentPrice));
+    });
+};
 export default getCoinId;

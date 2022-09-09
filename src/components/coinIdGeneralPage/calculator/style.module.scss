@@ -19,6 +19,7 @@
   align-items: center;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  text-transform: uppercase;
 }
 .symbolAndCount {
   display: flex;
@@ -28,7 +29,9 @@
     border: none;
   }
 }
-
+.selectCours {
+  border: 1px solid red;
+}
 .coinSymbol {
   text-transform: uppercase;
 }
@@ -69,9 +72,9 @@
   width: 300px;
   margin-left: 3px;
 }
-.symbolAndCount :hover{
+.symbolAndCount :hover {
   cursor: pointer;
-  .icons{
+  .icons {
     display: initial;
     margin-right: 5%;
   }
