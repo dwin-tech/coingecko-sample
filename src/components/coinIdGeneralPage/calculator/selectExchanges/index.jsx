@@ -9,7 +9,7 @@ import style from "./style.module.scss";
 export default function SelectAutoWidth({ cours, setCours, obj }) {
   const arrayOfCours = obj ? Object.keys(obj) : [];
 
-  const array = useMemo(() => {
+  const arrayOfCoursName = useMemo(() => {
     return arrayOfCours.map((e) => {
       return (
         <MenuItem key={e.id} value={e} className={style.coinSymbol}>
@@ -37,7 +37,7 @@ export default function SelectAutoWidth({ cours, setCours, obj }) {
           label="Age"
           className={style.coinSymbol}
         >
-          {array}
+          {arrayOfCoursName}
         </Select>
       </FormControl>
     </div>
