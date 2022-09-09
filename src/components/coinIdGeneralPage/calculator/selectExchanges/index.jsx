@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -8,13 +8,16 @@ import style from "./style.module.scss";
 
 export default function SelectAutoWidth({ cours, setCours, obj }) {
   const arrayOfCours = obj ? Object.keys(obj) : [];
-  const array = arrayOfCours.map((e) => {
-    return (
-      <MenuItem key={e.id} value={e} className={style.coinSymbol}>
-        {e}
-      </MenuItem>
-    );
-  });
+
+  const array = useMemo(() => {
+    return arrayOfCours.map((e) => {
+      return (
+        <MenuItem key={e.id} value={e} className={style.coinSymbol}>
+          {e}
+        </MenuItem>
+      );
+    });
+  }, [arrayOfCours]);
 
   return (
     <div>
@@ -40,6 +43,7 @@ export default function SelectAutoWidth({ cours, setCours, obj }) {
     </div>
   );
 }
+
 SelectAutoWidth.propTypes = {
   cours: PropTypes.string.isRequired,
   setCours: PropTypes.func.isRequired,

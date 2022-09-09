@@ -9,6 +9,7 @@ import SelectAutoWidth from "./selectExchanges";
 
 function CalculatorComponent() {
   const [cours, setCours] = useState("usd");
+  
   const [coursObject, setCoursObject] = useState({});
 
   const [count, setCount] = useState(0);
@@ -17,14 +18,8 @@ function CalculatorComponent() {
   const currentPrice = useSelector((state) => state.coinId.currentPrice);
 
   useEffect(() => {
-    setCoursObject({ usd: 0.1145452 });
-  }, []);
-
-  useEffect(() => {
     setCoursObject(currentPrice?.market_data?.current_price);
   }, [currentPrice]);
-
-  // eslint-disable-next-line no-unused-vars
 
   const dispatch = useDispatch();
   const { id } = useParams();
