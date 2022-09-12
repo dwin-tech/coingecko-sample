@@ -6,11 +6,13 @@ import Footer from "./components/footer";
 import ComingSoon from "./components/comingSoon";
 import TreeComponents from "./components/threeComponents";
 import CoinIdGeneralPage from "./components/coinIdGeneralPage/index";
+import SearchBar from "./components/searchTopCoins/searchBar";
 
 function App() {
   return (
     <div>
       <Header />
+      <SearchBar />
       <Routes>
         <Route path="/" element={<TreeComponents />} />
         <Route path="/coins/:id" element={<CoinIdGeneralPage />} />

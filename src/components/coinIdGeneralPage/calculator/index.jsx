@@ -9,7 +9,7 @@ import SelectAutoWidth from "./selectExchanges";
 
 function CalculatorComponent() {
   const [cours, setCours] = useState("usd");
-  
+
   const [coursObject, setCoursObject] = useState({});
 
   const [count, setCount] = useState(0);
